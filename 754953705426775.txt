@@ -1,0 +1,6 @@
+def deobfuscate(byt):
+    mask = b'happy_birthday_ilugd!'
+    lmask = len(mask)
+    return bytes(c ^ mask[i % lmask] for i, c in enumerate(byt))
+
+print(deobfuscate(b'\x1fRA\x13I2Q').decode())
